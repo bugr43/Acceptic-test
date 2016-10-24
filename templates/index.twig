@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>{{ title }}</title>
+</head>
+<body>
+  {% include "header.twig" %}
+
+
+
+  <div class="container main">
+
+    <!-- <div class="collection">
+        <a href="#!" class="collection-item">Alan<span class="badge">1</span></a>
+        <a href="#!" class="collection-item">Alan<span class="new badge">4</span></a>
+        <a href="#!" class="collection-item">Alan</a>
+        <a href="#!" class="collection-item">Alan<span class="badge">14</span></a>
+      </div> -->
+    <ul class="collection">
+      {% if error %}
+        {% for e in error %}
+            <li class='error collection-item orange-text'>{{ e }}</li>
+        {% endfor %}
+      {% endif %}
+      {% if success %}
+        <li class='success collection-item green-text accent-3'>{{ success }}</li>
+      {% endif %}
+    </ul>
+
+
+    <div class="row">
+      {% if not page %}
+        {% include 'content.twig' %}
+      {% endif %}
+      {% if page == 'signup' %}
+        {% include 'signup.twig' %}
+      {% endif %}
+      {% if page == 'signin' %}
+        {% include "signin.twig" %}
+      {% endif %}
+      {% if (page == 'user') and auth %}
+        {% include 'user.twig'%}
+      {% endif %}
+    </div>
+
+  </div>
+
+  {% include "footer.twig" %}
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

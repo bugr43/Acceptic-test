@@ -1,0 +1,9 @@
+<ul id="nav-mobile" class="right hide-on-med-and-down ">
+  {% if auth %}
+    <li><a class="black-text" href="user">Ваш профиль</a></li>
+    <li><a class="black-text" href="action/logout.php">Выйти</a></li>
+  {% else %}
+    <li><a class="black-text" href="/signup">Регистрация</a></li>
+    <li><a class="black-text" href="/signin">Войти</a></li>
+  {% endif %}
+</ul>

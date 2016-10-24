@@ -1,0 +1,15 @@
+<form class="valign col s4 offset-s4" method="post" action="/action/signin.php">
+  <div class="input-field">
+    <i class="small material-icons prefix">perm_identity</i>
+    <input name="login" type="text" class="validate {% if error['login'] %}invalid{% endif %}" value="{{ login }}">
+    <label for="login">Login</label>
+  </div>
+  <div class="input-field">
+    <i class="small material-icons prefix">vpn_key</i>
+    <input name="password" type="password" class="validate {% if error['password'] %}invalid{% endif %}">
+    <label for="password">Password</label>
+  </div>
+  <button class="btn waves-effect waves-light red lighten-1 right" type="submit" name="signin">
+    Вход
+  </button>
+</form>

@@ -1,0 +1,25 @@
+<form class="valign col s4 offset-s4" method="post" action="/action/signup.php">
+  <div class="input-field">
+    <i class="small material-icons prefix">perm_identity</i>
+    <input name="login" type="text" class="validate {% if error['login'] %}invalid{% endif %}" value="{{ login }}">
+    <label for="login">Login</label>
+  </div>
+  <div class="input-field">
+    <i class="small material-icons prefix">email</i>
+    <input name="email" type="email" class="validate {% if error['email'] %}invalid{% endif %}" value="{{ email }}">
+    <label for="email">Email</label>
+  </div>
+  <div class="input-field">
+    <i class="small material-icons prefix">vpn_key</i>
+    <input name="password" type="password" class="validate {% if error['password'] %}invalid{% endif %}">
+    <label for="password">Password</label>
+  </div>
+  <div class="input-field">
+    <i class="small material-icons prefix">vpn_key</i>
+    <input name="repeatPassword" type="password" class="validate {% if error['repeatPassword'] %}invalid{% endif %}">
+    <label for="repeatPassword">Repeat password</label>
+  </div>
+  <button class="btn waves-effect waves-light grey darken-1 right" type="submit" name="signup">
+    Регистрация
+  </button>
+</form>

@@ -1,0 +1,35 @@
+<div class="content">
+  <p>
+    Здравствуйте, {{ login }}!
+  </p>
+  <p>
+    Спасибо за регистрацию в нашем сервисе!
+    Мы периодически будем высылать наши новости на Вашу почту: <strong class='user-email'>{{ email }}</strong>
+  </p>
+  <p>
+    Если Ваш электронный адрес изменился, Вы можете
+    <a href='#update' class="btn waves-effect waves-light grey darken-1 modal-trigger">
+      обновить
+    </a> его.
+  </p>
+
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+  <!-- Modal Structure -->
+  <div id="update" class="modal">
+    <div class="modal-content">
+      <form class="valign" method="post" action="/action/updateUser.php">
+        <div class="input-field">
+          <i class="small material-icons prefix">email</i>
+          <input name="email" type="email" class="validate {% if error['email'] %}invalid{% endif %}" value="{{ email }}">
+          <label for="email">Электронный адресс</label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button id="updateUserData" class="modal-action modal-close waves-effect waves-green btn-flat" type="button" name="update">
+        Изменить адресс
+      </button>
+    </div>
+  </div>
+</div>
